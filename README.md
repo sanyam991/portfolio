@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Sanyam Sachan — Developer Portfolio
+
+A cinematic, Doctor Strange–themed developer portfolio built with Next.js 15, React 19, Framer Motion, and Tailwind CSS v4. Features a solar system hero, animated skills, real project showcases, and a working contact form.
+
+## Author
+
+**Sanyam Sachan** — Junior Software Engineer  
+[GitHub](https://github.com/sanyam991) · [LinkedIn](https://linkedin.com/in/sanyam991) · sachansanyam203@gmail.com
+
+## Features
+
+- **Solar System Hero** — Profile photo as the sun, 12 tech skills as orbiting planets
+- **Animated Skills** — 7-category tabbed skill bars (Languages, Backend, Big Data, Cloud/DevOps, Databases, AI/ML, Tools)
+- **Projects Showcase** — 4 real projects with GitHub links and modal detail view
+- **Experience Timeline** — Alternating left/right timeline with work and education entries
+- **Contact Form** — Functional email via Nodemailer + Gmail SMTP
+- **Fully Responsive** — Mobile, tablet, and desktop layouts with hamburger navigation
+- **Custom Cursor** — Gold dot + purple ring + 8-particle trail (desktop only)
+- **Smooth Scroll** — Lenis scroll library integration
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router, Turbopack) |
+| UI | React 19, Framer Motion 12, Tailwind CSS v4 |
+| Email | Nodemailer + Gmail SMTP |
+| Fonts | Cinzel, Space Grotesk, JetBrains Mono, Orbitron |
+| Animation | CSS keyframes, Framer Motion, Lenis smooth scroll |
+| Language | TypeScript |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Create environment file
+# Fill in GMAIL_USER and GMAIL_APP_PASSWORD in .env.local
+cp .env.local .env.local
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the project root:
 
-## Learn More
+```env
+GMAIL_USER=your_gmail@gmail.com
+GMAIL_APP_PASSWORD=your_16_char_app_password
+```
 
-To learn more about Next.js, take a look at the following resources:
+> Generate a Gmail App Password at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords) (requires 2-Step Verification enabled).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── globals.css          # Theme tokens, keyframes, responsive utilities
+│   ├── layout.tsx           # Root layout with fonts
+│   ├── page.tsx             # Main page
+│   └── api/contact/         # Nodemailer email endpoint
+├── components/
+│   ├── core/                # WebBackground, WebNav, SpiderHand
+│   ├── layout/              # Footer
+│   ├── sections/            # Hero, About, Skills, Projects, Experience, Achievements, Contact
+│   └── ui/                  # LoadingScreen, CursorEffect
+├── hooks/                   # Custom React hooks
+└── lib/                     # Utilities (cn)
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The portfolio is optimized for deployment on [Vercel](https://vercel.com). Set the environment variables in the Vercel dashboard under **Settings → Environment Variables**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## License
+
+MIT © 2025 Sanyam Sachan
